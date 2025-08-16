@@ -22,10 +22,12 @@ app.use(globalLimiter);
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
-      "https://api-roamology-v4.vercel.app", // ถ้าใช้ custom domain
+      // "http://localhost:5173",
+      "https://roamology-web-v4.vercel.app", // ถ้าใช้ custom domain
     ],
     credentials: true, // ถ้าคุณส่ง cookie/token
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 app.use(morgan("dev"));
