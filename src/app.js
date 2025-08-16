@@ -15,10 +15,6 @@ const app = express();
 app.set("trust proxy", 1);
 
 // Middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(cookieParser(process.env.SECRET_32));
-app.use(globalLimiter);
 app.use(
   cors({
     origin: [
@@ -27,9 +23,15 @@ app.use(
     ],
     credentials: true, // ถ้าคุณส่ง cookie/token
     methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
+    optionsSuccessStatus: 200,
   })
 );
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(cookieParser(process.env.SECRET_32));
+app.use(globalLimiter);
+
 app.use(morgan("dev"));
 app.use(
   helmet.contentSecurityPolicy({
