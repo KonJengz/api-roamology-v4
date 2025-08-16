@@ -19,7 +19,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser(process.env.SECRET_32));
 app.use(globalLimiter);
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://api-roamology-v4.vercel.app", // ถ้าใช้ custom domain
+    ],
+    credentials: true, // ถ้าคุณส่ง cookie/token
+  })
+);
 app.use(morgan("dev"));
 app.use(
   helmet.contentSecurityPolicy({

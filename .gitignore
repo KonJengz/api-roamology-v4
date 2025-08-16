@@ -9,3 +9,4 @@ serviceAccountKey.json
 
 temp-pic/* 
 !temp-pic/.gitkeep
+.vercel
