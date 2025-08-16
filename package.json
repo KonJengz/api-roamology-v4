@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --watch ./api/index.js",
     "start": "node ./api/index.js",
-    "build": "prisma generate",
-    "vercel-build": "prisma generate"
+    "build": " prisma generate",
+    "vercel-build": " prisma generate && prisma migrate deploy"
   },
   "type": "module",
   "keywords": [],
