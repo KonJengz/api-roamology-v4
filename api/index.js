@@ -5,7 +5,7 @@ import { gracefulShutdown } from "./utils/shutdown.util.js";
 // 1. ลบ import ที่เกี่ยวกับ Redis ออก
 // import { connectRedis, redisClient } from "./middlewares/rate-limiter.middleware.js";
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8887;
 let server;
 
 const startServer = async () => {

@@ -22,9 +22,9 @@ app.use(
       "https://roamology-web-v4.vercel.app", // ถ้าใช้ custom domain
     ],
     credentials: true, // ถ้าคุณส่ง cookie/token
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
-    optionsSuccessStatus: 200,
+    // methods: ["GET", "POST", "PUT", "DELETE"],
+    // allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
+    // optionsSuccessStatus: 200,
   })
 );
 app.use(express.urlencoded({ extended: false }));
