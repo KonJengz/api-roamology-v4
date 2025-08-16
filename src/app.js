@@ -19,6 +19,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
+      "https://roamology.vercel.app",
       "https://roamology-web-v4.vercel.app", // ถ้าใช้ custom domain
     ],
     credentials: true, // ถ้าคุณส่ง cookie/token
