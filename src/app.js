@@ -18,7 +18,7 @@ app.set("trust proxy", 1);
 app.use(
   cors({
     origin: [
-      // "http://localhost:5173",
+      "http://localhost:5173",
       "https://roamology-web-v4.vercel.app", // ถ้าใช้ custom domain
     ],
     credentials: true, // ถ้าคุณส่ง cookie/token
@@ -44,6 +44,10 @@ app.use(
 app.use(compression());
 
 // Routes
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 const BASE_URL = "/api/v1";
 app.use(`${BASE_URL}`, mainRouter);
 
